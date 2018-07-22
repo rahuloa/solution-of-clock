@@ -1,8 +1,11 @@
-package com.ubs.opsit.interviews;
+package com.ubs.opsit.interviews.support;
 
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 import org.junit.Test;
+
+import com.ubs.opsit.interviews.TimeConverter;
+import com.ubs.opsit.interviews.TimeConverterImpl;
 
 import static com.ubs.opsit.interviews.support.BehaviouralTestEmbedder.aBehaviouralTestRunner;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -13,15 +16,15 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 public class BerlinClockFixture {
 
-    private TimeConverter berlinClock;
+    private TimeConverter berlinClock = new TimeConverterImpl();
     private String theTime;
 
     @Test
     public void berlinClockAcceptanceTests() throws Exception {
-        /*aBehaviouralTestRunner()
+        aBehaviouralTestRunner()
                 .usingStepsFrom(this)
                 .withStory("berlin-clock.story")
-                .run();*/
+                .run();
     }
 
     @When("the time is $time")

@@ -44,5 +44,6 @@ RRRR
 OOOOOOOOOOO
 OOOO
 
-
-
+Scenario: Failed
+When the time is 00-00:00
+Then java.lang.IllegalArgumentException: Invalid time format:Correct format: hh:mm:ss.
